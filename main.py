@@ -101,8 +101,8 @@ def find(profile):
 
 
 if __name__ == "__main__":
-    #profiles = ["prati_develop","prati_staging","prati_prod","default"]
-    profiles = ["prati_prod"]
+    profiles = ["prati_develop","prati_staging","prati_prod","default"]
+    #profiles = ["prati_prod"]
     for x in profiles:
         find(x)
 
