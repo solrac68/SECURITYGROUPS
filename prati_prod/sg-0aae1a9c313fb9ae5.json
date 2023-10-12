@@ -1,0 +1,58 @@
+{
+    "Description": "Security group for Kubernetes ELB ae65b25cc8ad947ee91930d9ac1b29f1 (app-deprati/app-calculo-cuotas)",
+    "GroupName": "k8s-elb-ae65b25cc8ad947ee91930d9ac1b29f1",
+    "IpPermissions": [
+        {
+            "FromPort": 80,
+            "IpProtocol": "tcp",
+            "IpRanges": [
+                {
+                    "CidrIp": "0.0.0.0/0"
+                }
+            ],
+            "Ipv6Ranges": [],
+            "PrefixListIds": [],
+            "ToPort": 80,
+            "UserIdGroupPairs": []
+        },
+        {
+            "FromPort": 3,
+            "IpProtocol": "icmp",
+            "IpRanges": [
+                {
+                    "CidrIp": "0.0.0.0/0"
+                }
+            ],
+            "Ipv6Ranges": [],
+            "PrefixListIds": [],
+            "ToPort": 4,
+            "UserIdGroupPairs": []
+        }
+    ],
+    "OwnerId": "596906282789",
+    "GroupId": "sg-0aae1a9c313fb9ae5",
+    "IpPermissionsEgress": [
+        {
+            "IpProtocol": "-1",
+            "IpRanges": [
+                {
+                    "CidrIp": "0.0.0.0/0"
+                }
+            ],
+            "Ipv6Ranges": [],
+            "PrefixListIds": [],
+            "UserIdGroupPairs": []
+        }
+    ],
+    "Tags": [
+        {
+            "Key": "kubernetes.io/cluster/eks-appv2-ecommerce",
+            "Value": "owned"
+        },
+        {
+            "Key": "Name",
+            "Value": "del"
+        }
+    ],
+    "VpcId": "vpc-0d3d3b7d2fa10ef71"
+}

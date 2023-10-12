@@ -1,0 +1,75 @@
+{
+    "Description": "Security group for all nodes in the cluster",
+    "GroupName": "terraform-eks-demo-node",
+    "IpPermissions": [
+        {
+            "FromPort": 80,
+            "IpProtocol": "tcp",
+            "IpRanges": [],
+            "Ipv6Ranges": [],
+            "PrefixListIds": [],
+            "ToPort": 80,
+            "UserIdGroupPairs": [
+                {
+                    "Description": "elbv2.k8s.aws/targetGroupBinding=shared",
+                    "GroupId": "sg-081909f368849ca45",
+                    "UserId": "536459231447"
+                }
+            ]
+        },
+        {
+            "IpProtocol": "-1",
+            "IpRanges": [],
+            "Ipv6Ranges": [],
+            "PrefixListIds": [],
+            "UserIdGroupPairs": [
+                {
+                    "Description": "Allow node to communicate with each other",
+                    "GroupId": "sg-0b8796a42b7fe1809",
+                    "UserId": "536459231447"
+                }
+            ]
+        },
+        {
+            "FromPort": 1025,
+            "IpProtocol": "tcp",
+            "IpRanges": [],
+            "Ipv6Ranges": [],
+            "PrefixListIds": [],
+            "ToPort": 65535,
+            "UserIdGroupPairs": [
+                {
+                    "Description": "Allow worker Kubelets and pods to receive communication from the cluster control plane",
+                    "GroupId": "sg-0b0571c280e9e6ebf",
+                    "UserId": "536459231447"
+                }
+            ]
+        }
+    ],
+    "OwnerId": "536459231447",
+    "GroupId": "sg-0b8796a42b7fe1809",
+    "IpPermissionsEgress": [
+        {
+            "IpProtocol": "-1",
+            "IpRanges": [
+                {
+                    "CidrIp": "0.0.0.0/0"
+                }
+            ],
+            "Ipv6Ranges": [],
+            "PrefixListIds": [],
+            "UserIdGroupPairs": []
+        }
+    ],
+    "Tags": [
+        {
+            "Key": "kubernetes.io/cluster/ecommerce-cluster",
+            "Value": "owned"
+        },
+        {
+            "Key": "Name",
+            "Value": "terraform-eks-ecommerce-node"
+        }
+    ],
+    "VpcId": "vpc-0d6bd765ffe93ccb8"
+}

@@ -1,0 +1,194 @@
+{
+    "Description": "EKS node shared security group",
+    "GroupName": "eks-appv2-node-20230630211449621500000001",
+    "IpPermissions": [
+        {
+            "FromPort": 6443,
+            "IpProtocol": "tcp",
+            "IpRanges": [],
+            "Ipv6Ranges": [],
+            "PrefixListIds": [],
+            "ToPort": 6443,
+            "UserIdGroupPairs": [
+                {
+                    "Description": "Cluster API to node 6443/tcp webhook",
+                    "GroupId": "sg-07f91bf6614741b58",
+                    "UserId": "596906282789"
+                }
+            ]
+        },
+        {
+            "IpProtocol": "-1",
+            "IpRanges": [],
+            "Ipv6Ranges": [],
+            "PrefixListIds": [],
+            "UserIdGroupPairs": [
+                {
+                    "Description": "Node to node all ports/protocols",
+                    "GroupId": "sg-043ec3539a08a5637",
+                    "UserId": "596906282789"
+                }
+            ]
+        },
+        {
+            "FromPort": 9443,
+            "IpProtocol": "tcp",
+            "IpRanges": [],
+            "Ipv6Ranges": [],
+            "PrefixListIds": [],
+            "ToPort": 9443,
+            "UserIdGroupPairs": [
+                {
+                    "Description": "Cluster API to node 9443/tcp webhook",
+                    "GroupId": "sg-07f91bf6614741b58",
+                    "UserId": "596906282789"
+                }
+            ]
+        },
+        {
+            "FromPort": 1025,
+            "IpProtocol": "tcp",
+            "IpRanges": [],
+            "Ipv6Ranges": [],
+            "PrefixListIds": [],
+            "ToPort": 65535,
+            "UserIdGroupPairs": [
+                {
+                    "Description": "Node to node ingress on ephemeral ports",
+                    "GroupId": "sg-043ec3539a08a5637",
+                    "UserId": "596906282789"
+                }
+            ]
+        },
+        {
+            "FromPort": 8443,
+            "IpProtocol": "tcp",
+            "IpRanges": [],
+            "Ipv6Ranges": [],
+            "PrefixListIds": [],
+            "ToPort": 8443,
+            "UserIdGroupPairs": [
+                {
+                    "Description": "Cluster API to node 8443/tcp webhook",
+                    "GroupId": "sg-07f91bf6614741b58",
+                    "UserId": "596906282789"
+                }
+            ]
+        },
+        {
+            "FromPort": 10250,
+            "IpProtocol": "tcp",
+            "IpRanges": [],
+            "Ipv6Ranges": [],
+            "PrefixListIds": [],
+            "ToPort": 10250,
+            "UserIdGroupPairs": [
+                {
+                    "Description": "Cluster API to node kubelets",
+                    "GroupId": "sg-07f91bf6614741b58",
+                    "UserId": "596906282789"
+                }
+            ]
+        },
+        {
+            "FromPort": 53,
+            "IpProtocol": "tcp",
+            "IpRanges": [],
+            "Ipv6Ranges": [],
+            "PrefixListIds": [],
+            "ToPort": 53,
+            "UserIdGroupPairs": [
+                {
+                    "Description": "Node to node CoreDNS",
+                    "GroupId": "sg-043ec3539a08a5637",
+                    "UserId": "596906282789"
+                }
+            ]
+        },
+        {
+            "FromPort": 53,
+            "IpProtocol": "udp",
+            "IpRanges": [],
+            "Ipv6Ranges": [],
+            "PrefixListIds": [],
+            "ToPort": 53,
+            "UserIdGroupPairs": [
+                {
+                    "Description": "Node to node CoreDNS UDP",
+                    "GroupId": "sg-043ec3539a08a5637",
+                    "UserId": "596906282789"
+                }
+            ]
+        },
+        {
+            "FromPort": 443,
+            "IpProtocol": "tcp",
+            "IpRanges": [],
+            "Ipv6Ranges": [],
+            "PrefixListIds": [],
+            "ToPort": 443,
+            "UserIdGroupPairs": [
+                {
+                    "Description": "Cluster API to node groups",
+                    "GroupId": "sg-07f91bf6614741b58",
+                    "UserId": "596906282789"
+                }
+            ]
+        },
+        {
+            "FromPort": 4443,
+            "IpProtocol": "tcp",
+            "IpRanges": [],
+            "Ipv6Ranges": [],
+            "PrefixListIds": [],
+            "ToPort": 4443,
+            "UserIdGroupPairs": [
+                {
+                    "Description": "Cluster API to node 4443/tcp webhook",
+                    "GroupId": "sg-07f91bf6614741b58",
+                    "UserId": "596906282789"
+                }
+            ]
+        }
+    ],
+    "OwnerId": "596906282789",
+    "GroupId": "sg-043ec3539a08a5637",
+    "IpPermissionsEgress": [
+        {
+            "IpProtocol": "-1",
+            "IpRanges": [
+                {
+                    "CidrIp": "0.0.0.0/0",
+                    "Description": "Node all egress"
+                }
+            ],
+            "Ipv6Ranges": [
+                {
+                    "CidrIpv6": "::/0",
+                    "Description": "Node all egress"
+                }
+            ],
+            "PrefixListIds": [],
+            "UserIdGroupPairs": []
+        }
+    ],
+    "Tags": [
+        {
+            "Key": "GithubRepo",
+            "Value": "terraform-aws-eks"
+        },
+        {
+            "Key": "Name",
+            "Value": "eks-appv2-node"
+        },
+        {
+            "Key": "GithubOrg",
+            "Value": "terraform-aws-modules"
+        },
+        {
+            "Key": "kubernetes.io/cluster/eks-appv2",
+            "Value": "owned"
+        }
+    ],
+    "VpcId": "vpc-0d3d3b7d2fa10ef71"
+}

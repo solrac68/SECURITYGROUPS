@@ -1,0 +1,47 @@
+{
+    "Description": "default VPC security group",
+    "GroupName": "default",
+    "IpPermissions": [
+        {
+            "IpProtocol": "-1",
+            "IpRanges": [],
+            "Ipv6Ranges": [],
+            "PrefixListIds": [],
+            "UserIdGroupPairs": [
+                {
+                    "GroupId": "sg-0f86e5b8dc4932cbf",
+                    "UserId": "536459231447"
+                }
+            ]
+        },
+        {
+            "FromPort": 22,
+            "IpProtocol": "tcp",
+            "IpRanges": [
+                {
+                    "CidrIp": "0.0.0.0/0"
+                }
+            ],
+            "Ipv6Ranges": [],
+            "PrefixListIds": [],
+            "ToPort": 22,
+            "UserIdGroupPairs": []
+        }
+    ],
+    "OwnerId": "536459231447",
+    "GroupId": "sg-0f86e5b8dc4932cbf",
+    "IpPermissionsEgress": [
+        {
+            "IpProtocol": "-1",
+            "IpRanges": [
+                {
+                    "CidrIp": "0.0.0.0/0"
+                }
+            ],
+            "Ipv6Ranges": [],
+            "PrefixListIds": [],
+            "UserIdGroupPairs": []
+        }
+    ],
+    "VpcId": "vpc-0d5b190fe376c9d88"
+}

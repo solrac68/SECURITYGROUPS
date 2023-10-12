@@ -1,0 +1,55 @@
+{
+    "Description": "EKS cluster security group",
+    "GroupName": "eks-appv2-ecommerce-cluster-20230630104847991800000005",
+    "IpPermissions": [
+        {
+            "FromPort": 443,
+            "IpProtocol": "tcp",
+            "IpRanges": [],
+            "Ipv6Ranges": [],
+            "PrefixListIds": [],
+            "ToPort": 443,
+            "UserIdGroupPairs": [
+                {
+                    "Description": "Node groups to cluster API",
+                    "GroupId": "sg-0ba573e6d11f5300e",
+                    "UserId": "596906282789"
+                }
+            ]
+        }
+    ],
+    "OwnerId": "596906282789",
+    "GroupId": "sg-0221b3915b8d743a4",
+    "IpPermissionsEgress": [
+        {
+            "FromPort": 1025,
+            "IpProtocol": "tcp",
+            "IpRanges": [],
+            "Ipv6Ranges": [],
+            "PrefixListIds": [],
+            "ToPort": 65535,
+            "UserIdGroupPairs": [
+                {
+                    "Description": "To node 1025-65535",
+                    "GroupId": "sg-0ba573e6d11f5300e",
+                    "UserId": "596906282789"
+                }
+            ]
+        }
+    ],
+    "Tags": [
+        {
+            "Key": "GithubOrg",
+            "Value": "terraform-aws-modules"
+        },
+        {
+            "Key": "Name",
+            "Value": "eks-appv2-ecommerce-cluster"
+        },
+        {
+            "Key": "GithubRepo",
+            "Value": "terraform-aws-eks"
+        }
+    ],
+    "VpcId": "vpc-0d3d3b7d2fa10ef71"
+}

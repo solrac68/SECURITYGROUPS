@@ -1,0 +1,54 @@
+{
+    "Description": "Security group for Kubernetes ELB a557318a9750949e2bf50774047d990d (app-deprati/app-notificaciones)",
+    "GroupName": "k8s-elb-a557318a9750949e2bf50774047d990d",
+    "IpPermissions": [
+        {
+            "FromPort": 80,
+            "IpProtocol": "tcp",
+            "IpRanges": [
+                {
+                    "CidrIp": "0.0.0.0/0"
+                }
+            ],
+            "Ipv6Ranges": [],
+            "PrefixListIds": [],
+            "ToPort": 80,
+            "UserIdGroupPairs": []
+        },
+        {
+            "FromPort": 3,
+            "IpProtocol": "icmp",
+            "IpRanges": [
+                {
+                    "CidrIp": "0.0.0.0/0"
+                }
+            ],
+            "Ipv6Ranges": [],
+            "PrefixListIds": [],
+            "ToPort": 4,
+            "UserIdGroupPairs": []
+        }
+    ],
+    "OwnerId": "596906282789",
+    "GroupId": "sg-0df803c33db5fd29e",
+    "IpPermissionsEgress": [
+        {
+            "IpProtocol": "-1",
+            "IpRanges": [
+                {
+                    "CidrIp": "0.0.0.0/0"
+                }
+            ],
+            "Ipv6Ranges": [],
+            "PrefixListIds": [],
+            "UserIdGroupPairs": []
+        }
+    ],
+    "Tags": [
+        {
+            "Key": "kubernetes.io/cluster/eks-appv2-ecommerce",
+            "Value": "owned"
+        }
+    ],
+    "VpcId": "vpc-0d3d3b7d2fa10ef71"
+}

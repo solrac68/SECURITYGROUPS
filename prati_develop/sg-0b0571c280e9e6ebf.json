@@ -1,0 +1,51 @@
+{
+    "Description": "Cluster communication with worker nodes",
+    "GroupName": "terraform-eks-ecommerce-cluster",
+    "IpPermissions": [
+        {
+            "FromPort": 443,
+            "IpProtocol": "tcp",
+            "IpRanges": [
+                {
+                    "CidrIp": "10.3.0.0/16",
+                    "Description": "Allow workstation to communicate with the cluster API Server"
+                },
+                {
+                    "CidrIp": "181.62.52.122/32"
+                }
+            ],
+            "Ipv6Ranges": [],
+            "PrefixListIds": [],
+            "ToPort": 443,
+            "UserIdGroupPairs": [
+                {
+                    "Description": "Allow pods to communicate with the cluster API Server",
+                    "GroupId": "sg-0b8796a42b7fe1809",
+                    "UserId": "536459231447"
+                }
+            ]
+        }
+    ],
+    "OwnerId": "536459231447",
+    "GroupId": "sg-0b0571c280e9e6ebf",
+    "IpPermissionsEgress": [
+        {
+            "IpProtocol": "-1",
+            "IpRanges": [
+                {
+                    "CidrIp": "0.0.0.0/0"
+                }
+            ],
+            "Ipv6Ranges": [],
+            "PrefixListIds": [],
+            "UserIdGroupPairs": []
+        }
+    ],
+    "Tags": [
+        {
+            "Key": "Name",
+            "Value": "terraform-eks-ecommerce"
+        }
+    ],
+    "VpcId": "vpc-0d6bd765ffe93ccb8"
+}

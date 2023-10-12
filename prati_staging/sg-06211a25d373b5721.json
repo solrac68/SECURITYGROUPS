@@ -1,0 +1,31 @@
+{
+    "Description": "[k8s] Shared Backend SecurityGroup for LoadBalancer",
+    "GroupName": "k8s-traffic-ecommercecluster-91d5facc2e",
+    "IpPermissions": [],
+    "OwnerId": "761769855272",
+    "GroupId": "sg-06211a25d373b5721",
+    "IpPermissionsEgress": [
+        {
+            "IpProtocol": "-1",
+            "IpRanges": [
+                {
+                    "CidrIp": "0.0.0.0/0"
+                }
+            ],
+            "Ipv6Ranges": [],
+            "PrefixListIds": [],
+            "UserIdGroupPairs": []
+        }
+    ],
+    "Tags": [
+        {
+            "Key": "elbv2.k8s.aws/cluster",
+            "Value": "ecommerce-cluster"
+        },
+        {
+            "Key": "elbv2.k8s.aws/resource",
+            "Value": "backend-sg"
+        }
+    ],
+    "VpcId": "vpc-0d628f17e312631c0"
+}
